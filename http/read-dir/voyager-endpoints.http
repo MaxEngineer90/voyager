@@ -1,0 +1,13 @@
+###
+POST {{host}}/read
+Content-Type: application/json
+
+{
+  "path": "D:\\",
+  "files": []
+}
+
+<> 2024-01-31T142308.200.json
+
+
+

@@ -1,0 +1,11 @@
+server:
+  servlet:
+    context-path: /voyager/rest/api
+
+spring:
+  banner:
+    location: "classpath:/banner.txt"
+
+application:
+  title: voyager
+  version: 0.0.1
