@@ -1,14 +1,11 @@
-package com.ml.voyager.model;
+package com.ml.voyager.models;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
-import java.nio.file.attribute.FileTime;
-
-@Getter
-@Setter
+@Builder
 @ToString
+@Setter(AccessLevel.PUBLIC)
+@Getter(AccessLevel.PUBLIC)
 public class FileDetails {
 
     private String name;
