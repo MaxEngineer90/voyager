@@ -1,0 +1,20 @@
+spring:
+  banner:
+    location: "classpath:/banner.txt"
+  main:
+    allow-bean-definition-overriding: true
+info:
+  app:
+    name: Voyager
+    description: Modern file explorer
+    version: 0.0.1
+
+logging:
+  level:
+    com.ml.voyager: INFO
+
+application:
+  title: voyager
+  version: 0.0.1
+
+

@@ -1,0 +1,12 @@
+###
+POST {{host}}/read
+Content-Type: application/json
+
+{
+  "path": "D:\\",
+  "files": []
+}
+
+
+
+
