@@ -29,10 +29,11 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
     implementation 'com.github.ben-manes.caffeine:caffeine:2.8.8'
     implementation 'ch.qos.logback:logback-classic:1.4.12'
+    annotationProcessor 'org.projectlombok:lombok'
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.mapstruct:mapstruct-processor:1.5.0.Final'
     implementation 'org.mapstruct:mapstruct:1.5.0.Final'
     implementation 'commons-io:commons-io:2.11.0'
-    compileOnly 'org.projectlombok:lombok'
-    annotationProcessor 'org.projectlombok:lombok'
     annotationProcessor 'org.mapstruct:mapstruct-processor:1.5.0.Final'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
@@ -40,12 +41,22 @@ dependencies {
 tasks.named('test') {
     useJUnitPlatform()
 }
+
 tasks.register('copyFrontend', Copy) {
     from '../frontend/dist/voyager-ui/browser'
     into 'src/main/resources/static'
 }
+
+bootJar {
+    archiveFileName = 'voyager.jar'
+}
+
 processResources.dependsOn(copyFrontend)
 
 compileJava {
-    options.annotationProcessorGeneratedSourcesDirectory = file("build/generated/sources/annotationProcessor/java/main")
+    options.compilerArgs += [
+            '-Amapstruct.suppressGeneratorTimestamp=true',
+            '-Amapstruct.suppressGeneratorVersionInfoComment=true',
+            '-Amapstruct.verbose=true'
+    ]
 }

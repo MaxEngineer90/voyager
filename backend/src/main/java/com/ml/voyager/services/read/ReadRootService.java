@@ -23,7 +23,7 @@ public class ReadRootService {
         List<DirectoryContent> contents = Arrays.stream(File.listRoots()).map(mapper::fileToDirectoryContents).toList();
 
         if (contents.isEmpty()) {
-            logger.warning("Can`t fin any root");
+            logger.warning("Can`t find any root");
             return Collections.emptyList();
         }
 

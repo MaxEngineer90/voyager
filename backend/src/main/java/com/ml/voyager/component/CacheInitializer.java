@@ -22,7 +22,7 @@ public class CacheInitializer {
     public void init() {
         List<DirectoryContent> details = readRootService.getDetails();
         Cache cache = cacheManager.getCache("directoryContents");
-        if (!details.isEmpty()) {
+        if (!details.isEmpty() && cache != null) {
             cache.put("initial", details);
         }
     }
