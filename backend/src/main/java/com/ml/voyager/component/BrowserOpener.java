@@ -1,6 +1,7 @@
 package com.ml.voyager.component;
 
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
@@ -8,6 +9,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 @Component
+@Profile("prod")
 public class BrowserOpener implements CommandLineRunner {
 
     Logger logger = Logger.getLogger(BrowserOpener.class.getName());

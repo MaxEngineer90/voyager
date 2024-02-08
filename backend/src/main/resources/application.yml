@@ -3,6 +3,10 @@ spring:
     location: "classpath:/banner.txt"
   main:
     allow-bean-definition-overriding: true
+  profiles:
+    active: dev
+
+
 info:
   app:
     name: Voyager
