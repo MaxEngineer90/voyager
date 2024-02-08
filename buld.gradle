@@ -1,0 +1,4 @@
+tasks.register('customBuild') {
+    dependsOn ':frontend:buildFrontend'
+}
+
