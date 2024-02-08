@@ -10,7 +10,7 @@ import java.util.List;
 @Builder
 @Setter(AccessLevel.PUBLIC)
 @Getter(AccessLevel.PUBLIC)
-public class DirectoryContents {
+public class DirectoryContent {
     private String path;
     private List<FileDetails> files;
 }

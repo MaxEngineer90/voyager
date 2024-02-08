@@ -8,11 +8,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Mono;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/voyager/rest/api/v1/directory/read")
@@ -21,6 +20,16 @@ public class ReadDirectoryController {
 
     private final ReadDirectoryOrchestrationService directoryService;
     private static final Logger logger = LoggerFactory.getLogger(ReadDirectoryController.class);
+
+    @GetMapping(path = "/all-paths", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<List<DirectoryContentsDto>> getAllPaths() {
+        List<DirectoryContentsDto> paths = directoryService.getAllPaths();
+        if (paths.isEmpty()) {
+            return ResponseEntity.noContent().build();
+        }
+        return ResponseEntity.ok(paths);
+    }
+
 
     @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public Mono<ResponseEntity<DirectoryContentsDto>> getDirectoryInfo(@RequestBody ReadDirectoryContentDto directoryContents) {

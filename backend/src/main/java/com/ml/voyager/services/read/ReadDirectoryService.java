@@ -3,7 +3,7 @@ package com.ml.voyager.services.read;
 import com.ml.voyager.exceptions.DirectoryReadException;
 import com.ml.voyager.exceptions.FileReadException;
 import com.ml.voyager.exceptions.NotADirectoryException;
-import com.ml.voyager.models.DirectoryContents;
+import com.ml.voyager.models.DirectoryContent;
 import com.ml.voyager.models.FileDetails;
 import org.apache.commons.io.FileUtils;
 import org.springframework.cache.annotation.Cacheable;
@@ -23,7 +23,7 @@ public class ReadDirectoryService {
     private static final int PARALLELISM = Runtime.getRuntime().availableProcessors();
 
     @Cacheable("directoryContents")
-    public Flux<DirectoryContents> readDirectory(String path) {
+    public Flux<DirectoryContent> readDirectory(String path) {
         File directory = new File(path);
 
         if (!directory.isDirectory()) {
@@ -44,7 +44,7 @@ public class ReadDirectoryService {
                         .map(this::createFileDetails)
                         .sequential()
                         .collectList()
-                        .map(files -> DirectoryContents.builder()
+                        .map(files -> DirectoryContent.builder()
                                 .path(directory.getAbsolutePath())
                                 .files(files)
                                 .build())
