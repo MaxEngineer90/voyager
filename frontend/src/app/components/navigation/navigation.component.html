@@ -1,19 +1,16 @@
-<mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start" color="primary">
-  <mat-tab *ngFor="let tab of tabs; let i = index" [label]="tab.label">
-    <ng-template matTabContent>
-      <!-- Zweite Zeile (Toolbar) -->
-      <mat-toolbar color="accent">Toolbar-Second Line</mat-toolbar>
-      <!-- Dritte Zeile (Zusätzliche Toolbar oder Informationen) -->
-      <div class="third-line">Third-Line Content - {{ tab.label }}</div>
-      <!-- Tab Inhalt -->
-      <div class="tab-content">
-        Content for {{ tab.label }}
-        <!-- Hier können Sie weitere Komponenten oder Inhalte basierend auf dem Tab einfügen -->
-      </div>
-    </ng-template>
-  </mat-tab>
-</mat-tab-group>
-
-<button mat-raised-button class="example-action-button" (click)="addLink()">
-  Add link
-</button>
+<mat-toolbar color="primary">
+  <nav mat-tab-nav-bar backgroundColor="primary"  [mat-stretch-tabs]="false" >
+    @for (link of links; track link; let index = $index) {
+      <a mat-tab-link (click)="activeLink = link" [active]="activeLink == link">
+        {{link}}
+        @if(index > 0){
+          <mat-icon class="delete-icon" (click)="removeTab(index)">close</mat-icon>
+        }
+      </a>
+    }
+    <a mat-tab-link (click)="addLink()"><mat-icon>add</mat-icon></a>
+  </nav>
+  <mat-toolbar-row>
+    <app-path />
+  </mat-toolbar-row>
+</mat-toolbar>

@@ -1,0 +1,37 @@
+.container {
+  width: 100%;
+
+  .entryarea {
+    display: flex;
+    position: relative;
+    height: 30px;
+    line-height: 30px;
+
+
+    .input-container {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 0.5em;
+      width: 100%;
+      height: 100%;
+
+      .input-path,
+      .input-search{
+        outline: none;
+        font-size: 0.8em;
+        padding: 0 30px;
+        line-height: 30px;
+        border-radius: 20px;
+        border: solid 1.5px black;
+      }
+
+      .input-path{
+        width: 75%;
+      }
+
+      .input-search{
+        align-self: flex-end;
+      }
+    }
+  }
+}

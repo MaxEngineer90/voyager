@@ -1,40 +1,35 @@
-import { Component } from '@angular/core';
-import {MatToolbar} from "@angular/material/toolbar";
-import {ThemePalette} from "@angular/material/core";
-import {MatButton} from "@angular/material/button";
+import {ChangeDetectionStrategy, Component, ViewEncapsulation} from '@angular/core';
+import {MatIconModule} from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
+import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatTab, MatTabContent, MatTabGroup, MatTabLink, MatTabNav, MatTabNavPanel} from "@angular/material/tabs";
+import {ThemePalette} from "@angular/material/core";
+import {RouterLink, RouterLinkActive} from "@angular/router";
 import {NgForOf} from "@angular/common";
+import {MatFormField, MatFormFieldModule} from "@angular/material/form-field";
+import {MatInput, MatInputModule} from "@angular/material/input";
+import {FormControl} from "@angular/forms";
+import {PathComponent} from "./path/path.component";
+
 
 @Component({
   selector: 'app-navigation',
   standalone: true,
-  imports: [
-    MatToolbar,
-    MatButton,
-    MatTabLink,
-    MatTabNavPanel,
-    MatTabNav,
-    MatTabGroup,
-    MatTab,
-    MatTabContent,
-    NgForOf
-  ],
+  imports: [MatToolbarModule, MatButtonModule, MatIconModule, MatTabGroup, MatTab, MatTabNav, MatFormFieldModule, MatInputModule, MatTabLink, PathComponent],
   templateUrl: './navigation.component.html',
-  styleUrl: './navigation.component.scss'
+  styleUrl: './navigation.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class NavigationComponent {
-  title = 'voyager';
   links = ['First'];
-  tabs = [
-    { label: 'Tab 1', content: 'Inhalt für Tab 1' },
-    { label: 'Tab 2', content: 'Inhalt für Tab 2' },
-    // Fügen Sie weitere Tabs wie gewünscht hinzu
-  ];
   activeLink = this.links[0];
-  background: ThemePalette = "primary";
-
 
   addLink() {
     this.links.push(`Link ${this.links.length + 1}`);
   }
+
+  removeTab(index: number) {
+     this.links.splice(index,1);
+  }
 }
+

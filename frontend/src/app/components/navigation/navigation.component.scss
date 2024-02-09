@@ -1,7 +1,24 @@
-:host{
-  margin: 1em;
+.mat-icon{
+  height: 12px !important;
+  text-align: center;
+  font-size: 15px;
+}
 
-  .title{
-    color: black;
+.delete-icon{
+  padding-left: 1em;
+}
+
+nav{
+  margin-left: 1em;
+}
+
+.mat-toolbar-row{
+  margin-top: 1em;
+  display: flex;
+
+  app-path{
+    display: flex;
+    height: 100%;
+    width: 100%;
   }
 }
