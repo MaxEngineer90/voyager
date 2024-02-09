@@ -10,12 +10,14 @@ import {MatFormField, MatFormFieldModule} from "@angular/material/form-field";
 import {MatInput, MatInputModule} from "@angular/material/input";
 import {FormControl} from "@angular/forms";
 import {PathComponent} from "./path/path.component";
+import {ActionMenuBarComponent} from "./action-menu/action-menu-bar.component";
+import {MatSidenav} from "@angular/material/sidenav";
 
 
 @Component({
   selector: 'app-navigation',
   standalone: true,
-  imports: [MatToolbarModule, MatButtonModule, MatIconModule, MatTabGroup, MatTab, MatTabNav, MatFormFieldModule, MatInputModule, MatTabLink, PathComponent],
+  imports: [MatToolbarModule, MatButtonModule, MatIconModule, MatTabGroup, MatTab, MatTabNav, MatFormFieldModule, MatInputModule, MatTabLink, PathComponent, ActionMenuBarComponent, MatSidenav],
   templateUrl: './navigation.component.html',
   styleUrl: './navigation.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush

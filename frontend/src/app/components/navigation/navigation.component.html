@@ -10,7 +10,11 @@
     }
     <a mat-tab-link (click)="addLink()"><mat-icon>add</mat-icon></a>
   </nav>
-  <mat-toolbar-row>
+  <mat-toolbar-row class="second-row">
     <app-path />
   </mat-toolbar-row>
+  <mat-toolbar-row class="third-row">
+    <app-action-menu-bar/>
+  </mat-toolbar-row>
 </mat-toolbar>
+<mat-sidenav color="primary"></mat-sidenav>

@@ -12,13 +12,20 @@ nav{
   margin-left: 1em;
 }
 
-.mat-toolbar-row{
+.second-row,
+.third-row{
   margin-top: 1em;
   display: flex;
+}
 
+.second-row {
   app-path{
     display: flex;
     height: 100%;
     width: 100%;
   }
+}
+
+.third-row{
+  height: 1em;
 }

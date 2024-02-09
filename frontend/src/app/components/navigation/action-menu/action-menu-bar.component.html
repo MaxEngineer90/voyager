@@ -1,0 +1,46 @@
+<section>
+<button mat-icon-button [matMenuTriggerFor]="menu">
+  <mat-icon>add_circle</mat-icon>
+</button>
+</section>
+<mat-divider [vertical]="true"></mat-divider>
+<section>
+<button mat-icon-button>
+  <mat-icon>content_copy</mat-icon>
+</button>
+
+<button mat-icon-button>
+  <mat-icon>save_as</mat-icon>
+</button>
+
+<button mat-icon-button>
+  <mat-icon>delete</mat-icon>
+</button>
+
+<button mat-icon-button>
+  <mat-icon>swap_vert</mat-icon>
+</button>
+
+<button mat-icon-button [matMenuTriggerFor]="menu">
+  <mat-icon>menu</mat-icon>
+</button>
+</section>
+<mat-divider [vertical]="true"></mat-divider>
+<section>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item>
+    <mat-icon>view_list</mat-icon>
+    <span>Anzeigen</span>
+  </button>
+</mat-menu>
+
+<button mat-icon-button>
+  <mat-icon>more_vert</mat-icon>
+</button>
+</section>
+<mat-divider [vertical]="true"></mat-divider>
+<section>
+  <button mat-icon-button>
+    <mat-icon>loupe</mat-icon>
+  </button>
+</section>
