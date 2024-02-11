@@ -1,31 +1,18 @@
-.mat-icon{
-  height: 12px !important;
-  text-align: center;
-  font-size: 15px;
-}
-
-.delete-icon{
-  padding-left: 1em;
-}
-
-nav{
-  margin-left: 1em;
-}
-
 .second-row,
-.third-row{
+.third-row {
   margin-top: 1em;
   display: flex;
 }
 
 .second-row {
-  app-path{
+  app-path-bar {
     display: flex;
     height: 100%;
     width: 100%;
   }
 }
 
-.third-row{
+.third-row {
   height: 1em;
 }
+

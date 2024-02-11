@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PathComponent } from './path.component';
+import { DetailsSidenavComponent } from './details-sidenav.component';
 
-describe('PathComponent', () => {
-  let component: PathComponent;
-  let fixture: ComponentFixture<PathComponent>;
+describe('DetailsSidenavComponent', () => {
+  let component: DetailsSidenavComponent;
+  let fixture: ComponentFixture<DetailsSidenavComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [PathComponent]
+      imports: [DetailsSidenavComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(PathComponent);
+    fixture = TestBed.createComponent(DetailsSidenavComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

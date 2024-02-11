@@ -1,38 +1,29 @@
-import {ChangeDetectionStrategy, Component, ViewEncapsulation} from '@angular/core';
+import {ChangeDetectionStrategy, Component} from '@angular/core';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatTab, MatTabContent, MatTabGroup, MatTabLink, MatTabNav, MatTabNavPanel} from "@angular/material/tabs";
-import {ThemePalette} from "@angular/material/core";
-import {RouterLink, RouterLinkActive, RouterOutlet} from "@angular/router";
-import {NgForOf} from "@angular/common";
-import {MatFormField, MatFormFieldModule} from "@angular/material/form-field";
-import {MatInput, MatInputModule} from "@angular/material/input";
-import {FormControl} from "@angular/forms";
-import {PathComponent} from "./path/path.component";
+import {MatTab, MatTabGroup, MatTabLink, MatTabNav} from "@angular/material/tabs";
+import {RouterOutlet} from "@angular/router";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatInputModule} from "@angular/material/input";
+import {FormsModule} from "@angular/forms";
+import {PathBarComponent} from "./path-bar/path-bar.component";
 import {ActionMenuBarComponent} from "./action-menu-bar/action-menu-bar.component";
 import {MatSidenav, MatSidenavContainer, MatSidenavContent} from "@angular/material/sidenav";
 import {MatListItem, MatNavList} from "@angular/material/list";
+import {TabBarComponent} from "./tab-bar/tab-bar.component";
+import {DirectorySidenavComponent} from "./sidenavs/directory-sidenav/directory-sidenav.component";
+import {MatCheckbox} from "@angular/material/checkbox";
 
 
 @Component({
   selector: 'app-navigation',
   standalone: true,
-  imports: [MatToolbarModule, MatButtonModule, MatIconModule, MatTabGroup, MatTab, MatTabNav, MatFormFieldModule, MatInputModule, MatTabLink, PathComponent, ActionMenuBarComponent, MatSidenav, MatSidenavContent, RouterOutlet, MatNavList, MatListItem, MatSidenavContainer],
+  imports: [MatToolbarModule, MatButtonModule, MatIconModule, MatTabGroup, MatTab, MatTabNav, MatFormFieldModule, MatInputModule, MatTabLink, PathBarComponent, ActionMenuBarComponent, MatSidenav, MatSidenavContent, RouterOutlet, MatNavList, MatListItem, MatSidenavContainer, TabBarComponent, DirectorySidenavComponent, MatCheckbox, FormsModule],
   templateUrl: './navigation.component.html',
   styleUrl: './navigation.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class NavigationComponent {
-  links = ['First'];
-  activeLink = this.links[0];
-
-  addLink() {
-    this.links.push(`Link ${this.links.length + 1}`);
-  }
-
-  removeTab(index: number) {
-     this.links.splice(index,1);
-  }
 }
 

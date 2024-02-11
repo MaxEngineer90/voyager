@@ -1,20 +1,13 @@
 <mat-toolbar color="primary">
-  <nav mat-tab-nav-bar backgroundColor="primary"  [mat-stretch-tabs]="false" >
-    @for (link of links; track link; let index = $index) {
-      <a mat-tab-link (click)="activeLink = link" [active]="activeLink == link">
-        {{link}}
-        @if(index > 0){
-          <mat-icon class="delete-icon" (click)="removeTab(index)">close</mat-icon>
-        }
-      </a>
-    }
-    <a mat-tab-link (click)="addLink()"><mat-icon>add</mat-icon></a>
-  </nav>
+  <app-tab-bar/>
   <mat-toolbar-row class="second-row">
-    <app-path />
+    <app-path-bar/>
   </mat-toolbar-row>
   <mat-toolbar-row class="third-row">
     <app-action-menu-bar/>
   </mat-toolbar-row>
 </mat-toolbar>
 
+<div class="sidenav-container">
+  <app-directory-sidenav/>
+</div>

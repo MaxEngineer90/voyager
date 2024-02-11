@@ -1,0 +1,11 @@
+<nav mat-tab-nav-bar backgroundColor="primary"  [mat-stretch-tabs]="false" >
+  @for (link of links; track link; let index = $index) {
+    <a mat-tab-link (click)="activeLink = link" [active]="activeLink == link">
+      {{link}}
+      @if(index > 0){
+        <mat-icon class="delete-icon" (click)="removeTab(index)">close</mat-icon>
+      }
+    </a>
+  }
+  <a mat-tab-link (click)="addLink()"><mat-icon>add</mat-icon></a>
+</nav>

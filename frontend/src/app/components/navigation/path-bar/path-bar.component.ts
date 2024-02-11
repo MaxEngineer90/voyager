@@ -5,7 +5,7 @@ import {MatFormField, MatInput, MatLabel} from "@angular/material/input";
 import {MatOption, MatSelect} from "@angular/material/select";
 
 @Component({
-  selector: 'app-path',
+  selector: 'app-path-bar',
   standalone: true,
   imports: [
     MatIcon,
@@ -17,10 +17,10 @@ import {MatOption, MatSelect} from "@angular/material/select";
     MatOption,
     MatLabel
   ],
-  templateUrl: './path.component.html',
-  styleUrl: './path.component.scss',
+  templateUrl: './path-bar.component.html',
+  styleUrl: './path-bar.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class PathComponent {
+export class PathBarComponent {
 
 }
